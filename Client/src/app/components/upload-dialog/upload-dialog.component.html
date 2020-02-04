@@ -1,0 +1,11 @@
+<div class="files-container">
+  <app-upload-dialog-file *ngFor="let sprite of sprites"
+                          [sprite]="sprite"
+                          (remove)="remove(sprite)">
+  </app-upload-dialog-file>
+</div>
+
+<div class="buttons-container">
+  <span class="link confirm" (click)="upload()">Upload</span>
+  <span class="link cancel" (click)="cancel()">Cancel</span>
+</div>

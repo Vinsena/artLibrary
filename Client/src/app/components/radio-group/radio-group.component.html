@@ -1,0 +1,14 @@
+<div class="radio-group" [ngClass]="{disabled: disabled}">
+  <div *ngFor="let item of items" class="radio-button-holder">
+      <input
+        [name]="groupName"
+        type="radio"
+        [id]="groupName + (item.value || item)"
+        [value]="item.value || item"
+        [checked]="(item.value || item) === selectedValue"
+        (change)="onSelectionChange($event)"
+        [disabled]="disabled"
+      >
+      <label class="link" [for]="groupName + (item.value || item)">{{item.text || item.value || item}}</label>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import '../../../variables.scss';
+
+:host {
+  padding: 14px;
+  display: block;
+}
+
+.tag {
+  background-color: $light-3;
+  color: $medium-3;
+  border-radius: 2px;
+  padding: 4px 8px;
+  display: inline-block;
+  margin: 3px;
+  user-select: none;
+  text-decoration: none;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $light-2;
+  }
+}

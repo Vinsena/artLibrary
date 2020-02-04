@@ -1,0 +1,23 @@
+@import "../../../variables";
+
+.side-menu {
+  height: 100%;
+  background-color: $light-background;
+  border-right: $light-border;
+  color: $text-color;
+
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+  font-size: 14px;
+}

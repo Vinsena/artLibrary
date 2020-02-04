@@ -1,0 +1,49 @@
+.radio-group {
+  input {
+    display: none;
+  }
+
+  .radio-button-holder {
+
+    display: inline-block;
+
+    label {
+      display: inline-block;
+      background-color: #CCC;
+      padding: 4px 10px 6px 10px;
+      border: solid 1px #999;
+      margin: -1px;
+    }
+
+    input:checked + label {
+      background-color: #EEE;
+      &:hover {
+        background-color: #EEE;
+      }
+    }
+
+    input:not(:checked) + label:hover {
+      background-color: #CCC;
+      &:hover {
+        background-color: #DDD;
+      }
+    }
+
+    &:first-child label {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child label {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  &.disabled {
+    .radio-button-holder {
+      label {
+        color: #AAA !important;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

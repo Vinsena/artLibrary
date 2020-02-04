@@ -1,0 +1,11 @@
+<div class="main">
+  <div *ngIf="isConfigLoaded && config.enableGoogleAuth" class="link google-button" (click)="loginByGoogle()">
+    <span class="google-icon"></span><span class="text">Login with Google</span>
+  </div>
+
+  <form *ngIf="isConfigLoaded && !config.enableGoogleAuth" [formGroup]="loginPasswordForm" (submit)="loginByLoginAndPassword()">
+    <input formControlName="username" type="text" placeholder="Username">
+    <input formControlName="password" type="password" placeholder="Password">
+    <input type="submit" value="Log in">
+  </form>
+</div>

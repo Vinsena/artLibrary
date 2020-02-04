@@ -1,0 +1,130 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$mdi-font-path: "~@mdi/font/fonts";
+@import "~@mdi/font/scss/materialdesignicons.scss";
+@import "variables.scss";
+
+* {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  color: $text-color;
+}
+
+
+.filter-title {
+  font-weight: bold;
+  margin: 3px 0;
+  display: inline-block;
+
+  .mdi {
+    font-size: 20px;
+  }
+}
+
+input[type=text], input[type=number], input[type=password], input[type=email] {
+  padding: 4px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: $dark-border;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+}
+
+.number-input {
+  width: 50px;
+}
+
+.link {
+  cursor: pointer;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.input-with-button {
+  input {
+    width: 180px;
+  }
+
+  button {
+    position: relative;
+    top: 2px;
+    border-radius: 3px;
+    border: $dark-border;
+    margin-left: 5px;
+    background-color: $button;
+    font-size: 21px;
+    color: $dark-text-color;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-active;
+    }
+  }
+}
+
+.preset-link {
+  display: block;
+  margin: 5px 0px;
+  position: relative;
+
+  .preset-icon {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  .link-text {
+    border-bottom: dashed 1px #{$light-text-color};
+    display: inline-block;
+    width: 180px;
+    height: 20px;
+    overflow: hidden;
+    top: 3px;
+    position: relative;
+  }
+
+  .remove-button {
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+  }
+
+  .link {
+    color: $dark-text-color;
+
+    &:hover {
+      color: $text-color;
+    }
+
+    &:active {
+      color: $light-text-color;
+    }
+  }
+}
+
+.space-5 {
+  margin-top: 4px;
+  height: 1px;
+}
+
+.space-10 {
+  margin-top: 9px;
+  height: 1px;
+}
+
+.space-20 {
+  margin-top: 19px;
+  height: 1px;
+}
+
+.arrow-top {
+  width: 0;
+  height: 0;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #{$medium-background};
+  position: absolute;
+}

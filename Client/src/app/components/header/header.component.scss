@@ -1,0 +1,175 @@
+@import "../../../variables";
+
+:host {
+  display: block;
+}
+
+:host {
+  background-color: $light-background;
+  border: $light-border;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+
+.logo-container {
+
+  width: $side-panel-width;
+  margin: 0 20px 0 10px;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    .logo-text {
+      font-family: "Open Sans", "Helvetica Neue", sans-serif;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .alpha-test {
+      color: #ff0000bd;
+      font-size: 14px;
+      display: inline-block;
+      position: absolute;
+      left: 112px;
+      top: 29px;
+      font-weight: bold;
+    }
+
+    img {
+      max-height: 35px;
+      margin: 5px 10px 5px 5px;
+
+      &:hover {
+        animation: shaking 200ms 2;
+      }
+
+      @keyframes shaking {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(15deg);
+        }
+        60% {
+          transform: rotate(-10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &:active, &:link, &:hover, &:visited {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.main-menu {
+  display: flex;
+
+  a {
+    padding: 5px;
+    margin: 1px;
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+
+    &:active {
+      background-color: $button-active;
+    }
+
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+
+  .users {
+    font-size: 24px;
+    position: relative;
+    top: -4px;
+  }
+
+  .activeRoute {
+    background-color: $button-hover;
+  }
+}
+
+.search-form {
+  margin-left: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  width: calc(100vw - 520px);
+
+  input {
+    flex-grow: 1;
+    height: 34px;
+    position: relative;
+    padding: 7px;
+    box-sizing: border-box;
+  }
+
+  .mdi-close {
+    position: relative;
+    right: 16px;
+    margin: -10px;
+    font-size: 20px;
+  }
+}
+
+.help-button {
+  position: relative;
+  margin-left: 5px;
+
+  .mdi {
+    font-size: 20px;
+    color: $text-color;
+
+    &:hover {
+      color: $light-text-color;
+    }
+    &:active {
+      color: $text-color;
+    }
+  }
+}
+
+.help-box {
+
+  $width: 200px;
+
+  width: $width;
+  position: absolute;
+  top: 35px;
+  left: -#{$width/2};
+  background-color: $medium-background;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 5;
+
+  .search-example {
+    border-bottom: dashed 1px #{$dark-text-color};
+    text-decoration: none;
+    color: $dark-text-color;
+  }
+
+  .arrow-top {
+    left: #{$width/2};
+    top: -10px;
+  }
+}

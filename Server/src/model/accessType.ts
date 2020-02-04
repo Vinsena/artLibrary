@@ -1,0 +1,8 @@
+export enum AccessType {
+    VIEW = 'VIEW',
+    UPLOAD = 'UPLOAD',
+    DELETE = 'DELETE',
+    INSTANT_DELETE = 'INSTANT_DELETE',
+    CHANGE_RIGHTS = 'CHANGE_RIGHTS',
+    VIEW_USERS = 'VIEW_USERS'
+}

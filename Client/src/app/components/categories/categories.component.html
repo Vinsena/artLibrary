@@ -1,0 +1,14 @@
+<div *ngIf="(categories | async).length > 0">
+  <span>Categories</span>
+  <div *ngFor="let cat of categories | async">
+    {{cat}}
+  </div>
+</div>
+
+<div>
+  <span>Tags</span><br>
+  <div *ngIf="(tags | async).length == 0">
+    No tags yet :(
+  </div>
+  <a [routerLink]="['/sprites/search']" [queryParams]="{search: tag}" class="tag link" *ngFor="let tag of tags | async">{{tag}}</a>
+</div>

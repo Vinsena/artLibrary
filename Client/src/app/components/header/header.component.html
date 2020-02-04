@@ -1,0 +1,36 @@
+<div class="logo-container">
+  <a class="logo-link" [routerLink]="['sprites/search']">
+    <img alt="Sprite Cat" src="../../../assets/logo.png">
+    <span class="logo-text">Sprite Cat</span>
+    <span class="alpha-test">alpha</span>
+  </a>
+
+  <div style="flex-grow: 1"></div>
+
+  <nav class="main-menu">
+    <a [routerLink]="['/sprites/search']" [routerLinkActive]="['activeRoute']" class="material-icons link">search</a>
+    <a [routerLink]="['/sprites/categories']" [routerLinkActive]="['activeRoute']" class="material-icons link">folder</a>
+    <!-- <a [routerLink]="['/sprites/users']" [routerLinkActive]="['activeRoute']" class="link"><span class="users mdi mdi-account-box-multiple"></span></a> -->
+    <!-- <a [routerLink]="['/sprites/trash']" [routerLinkActive]="['activeRoute']" class="link"><span class="users mdi mdi-trash-can-outline"></span></a> -->
+  </nav>
+
+</div>
+
+<form *ngIf="(childRoute | async) === 'search'" class="search-form" [formGroup]="form">
+  <input #searchInput type="text" placeholder="Name, tag, atlas, etc." formControlName="search">
+  <div class="link mdi mdi-close" (click)="clearSearch()"></div>
+  <div class="help-button">
+    <span (click)="showHelp()" class="link mdi mdi-help-circle"></span>
+    <div class="help-box" [ngStyle]="{display: displayHelp ? 'block' : 'none'}">
+      <div class="arrow-top"></div>
+      <b>Ctrl+F</b> or <b>F3</b> to focus on search string.<br><br>
+      Write multiple filters comma separated i.e. <span (click)="setExample()"
+                                                        class="link search-example">{{searchExample}}</span>
+    </div>
+  </div>
+</form>
+
+<div style="flex-grow: 1"></div>
+
+<app-upload-list></app-upload-list>
+

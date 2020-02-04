@@ -1,0 +1,36 @@
+<div class="sprite-container">
+
+  <div class="sprite-img-holder">
+    <img alt="Loading..." class="sprite-img" [src]="sprite.preview | secure">
+    <div class="hidden-sprite-info">
+          <div class="info">
+            Last update: {{sprite.lastUpdate | date: 'dd/MM/y HH:mm:ss'}}<br>
+            <div class="tags-container" *ngIf="sprite.projectMeta && sprite.projectMeta.tags">
+              <a [routerLink]="['./']" [queryParams]="{search: tag}" class="tag" *ngFor="let tag of sprite.projectMeta.tags.slice(0,3)">{{tag}}</a>
+              <a *ngIf="sprite.projectMeta.tags.length > 3" (click)="expandTags()" class="tag link">...</a>
+            </div>
+          </div>
+
+      <div class="bottom-buttons">
+          <span class="link button">
+            <span class="link mdi mdi-pencil preset-icon"></span>
+          </span>
+
+        <a class="button" [href]="sprite.path | secure" target="_blank">
+          <span class="link mdi mdi-open-in-new"></span>
+        </a>
+
+        <a class="button" [href]="sprite.path | secure" [download]="sprite.name" target="_blank">
+          <span class="link mdi mdi-download preset-icon"></span>
+        </a>
+      </div>
+
+    </div>
+    <div class="sprite-size">{{sprite.meta.width}} x {{sprite.meta.height}}</div>
+  </div>
+
+  <div class="sprite-name">
+    <span>{{sprite.name}}</span>
+    <div class="gradient-end"></div>
+  </div>
+</div>

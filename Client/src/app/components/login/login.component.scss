@@ -1,0 +1,50 @@
+@import "../../../variables";
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $light-background;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 50px;
+  border: $light-border;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $light-background;
+  }
+
+  &, &:active {
+    background-color: white;
+  }
+
+  .text {
+    font-size: 16px;
+    color: $light-text-color;
+    font-weight: bold;
+    pointer-events: none;
+  }
+
+  .google-icon {
+    background-image: url(../../../assets/google.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-size: contain;
+    margin-right: 10px;
+  }
+}

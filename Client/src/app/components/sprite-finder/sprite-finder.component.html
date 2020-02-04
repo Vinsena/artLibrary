@@ -1,0 +1,20 @@
+<div class="main-container" [ngClass]="{'drop-state': showFileDropArea}">
+  <app-header></app-header>
+
+  <div class="content-holder">
+
+    <div class="sprites-search" fxLayout="row" *ngIf="(childRoute | async) === 'search'">
+      <app-side-menu></app-side-menu>
+      <app-sprites-list></app-sprites-list>
+    </div>
+
+    <app-categories *ngIf="(childRoute | async) === 'categories'"></app-categories>
+    <app-users *ngIf="(childRoute | async) === 'users'"></app-users>
+    <div *ngIf="(childRoute | async) === 'trash'">Under construction</div>
+
+  </div>
+
+  <div class="drop-background">
+    <span class="mdi mdi-cloud-upload"></span>
+  </div>
+</div>

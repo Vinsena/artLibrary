@@ -1,0 +1,13 @@
+<div #container class="content">
+  <app-sprite [sprite]="sprite" class="sprite-container" *ngFor="let sprite of sprites$ | async"></app-sprite>
+
+  <div class="empty-list">
+    <div class="not-found"
+         [style.opacity]="(!initializing && !(isLoading$ | async) && (sprites$ | async).length === 0) ? 1 : 0"
+    >
+      <div class="not-found-icon"></div>
+      <span class="not-found-text">Oh, nothing found :(</span>
+    </div>
+    <div [style.opacity]="(isLoading$ | async) ? 1 : 0" class="loading mdi mdi-loading"></div>
+  </div>
+</div>

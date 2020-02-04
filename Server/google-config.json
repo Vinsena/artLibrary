@@ -1,0 +1,9 @@
+{
+  "clientId": "982744768591-7q3jl2e5uvc67hmti4bcff060jcmq12b.apps.googleusercontent.com",
+  "clientSecret": "JmOMnQbZrsnhqCpmKIMmdcku",
+  "redirect": "http://dimcore-37633.portmap.host:37633/google-auth",
+  "defaultScope": [
+    "https://www.googleapis.com/auth/plus.me",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ]
+}

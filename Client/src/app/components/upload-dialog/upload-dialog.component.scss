@@ -1,0 +1,33 @@
+@import "../../../variables";
+
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  padding: 10px 20px;
+}
+
+.confirm {
+  background-color: $light-background;
+}
+
+.cancel {
+  border: none;
+  background-color: transparent;
+}
+
+.files-container {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  overflow: auto;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}

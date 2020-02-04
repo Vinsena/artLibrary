@@ -1,0 +1,17 @@
+<div class="preview-container">
+  <img class="preview" [src]="src" *ngIf="src">
+</div>
+<div class="info-container">
+  <span class="file-name">{{sprite.file.name}}</span>
+  <span class="size">{{sprite.file.size| size}}</span>
+  <tag-input [(ngModel)]="sprite.tags"
+             [clearOnBlur]="true"
+             [theme]="'minimal'"
+             [modelAsStrings]="true"
+             >
+    <tag-input-dropdown [focusFirstElement]="true"
+                        [autocompleteItems]="autocompleteItems">
+    </tag-input-dropdown>
+  </tag-input>
+</div>
+<span class="remove mdi mdi-trash-can-outline link" (click)="remove.emit()"></span>

@@ -1,0 +1,1 @@
+<a (click)="dialogRef.close(tag)" [routerLink]="['sprites/search']" [queryParams]="{search: tag}" class="tag link" *ngFor="let tag of tags">{{tag}}</a>

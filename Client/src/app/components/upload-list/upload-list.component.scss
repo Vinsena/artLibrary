@@ -1,0 +1,182 @@
+@import "../../../variables";
+
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.upload {
+  font-size: 32px;
+  width: 46px;
+  white-space: nowrap;
+  position: relative;
+
+  .mdi-upload {
+    position: relative;
+
+    &:hover {
+      color: $light-text-color;
+    }
+
+    &:active {
+      color: $text-color;
+    }
+  }
+
+  .upload-box {
+    min-width: 250px;
+    white-space: nowrap;
+    position: absolute;
+    top: 55px;
+    right: 4px;
+    background-color: $medium-background;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 5;
+
+    .arrow-top {
+      right: 15px;
+      top: -10px;
+    }
+  }
+}
+
+.loading-item {
+  position: relative;
+  border: $dark-border;
+  border-radius: 2px;
+  height: 28px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.done {
+  border: none;
+  .foreground {
+    display: none;
+  }
+}
+
+.failed {
+  border: solid 1px rgb(200,0,0);
+  .foreground {
+    display: none;
+  }
+}
+
+
+.foreground {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: $medium-foreground;
+}
+
+.status {
+  position: relative;
+  top: -1px;
+  z-index: 15;
+  display: inline-block;
+  color: $dark-text-color;
+  margin-right: 5px;
+  margin-left: 5px;
+
+  display: flex;
+  flex-grow: 1;
+
+  .name {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+
+  .size {
+    width: 140px;
+    text-align: right;
+    font-size: 14px;
+    color: $light-text-color;
+  }
+
+  .percent {
+    width: 50px;
+    text-align: right;
+    margin-left: 10px;
+  }
+}
+
+.cancel-button {
+  font-size: 20px;
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.count {
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 3px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  top: 3px;
+  right: -2px;
+}
+
+.clear-done {
+
+  text-align: right;
+  margin-bottom: 6px;
+
+  .link {
+    &:hover {
+      color: $light-text-color;
+    }
+
+    &, &:active {
+      color: $text-color;
+    }
+  }
+}
+
+.items-container {
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+}
+
+.mdi-alert {
+  &:hover {
+    color: red;
+  }
+
+  &, &:active {
+    color: rgb(200,0,0);
+  }
+}
+
+.mdi-check-circle-outline {
+  &:hover {
+    color: rgb(0,200,0);
+  }
+
+  &, &:active {
+    color: green;
+  }
+}
+
+.dragAndDropHelp {
+  padding: 12px;
+  text-align: center;
+  border: dashed 1px #{$medium-foreground};
+  border-radius: 0px;
+  background-color: $light-background;
+  font-size: 13px;
+}

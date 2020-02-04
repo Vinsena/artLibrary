@@ -1,0 +1,53 @@
+<div class="upload">
+  <span (click)="showHideUploadList()" class="link mdi mdi-upload">
+    <span *ngIf="countInProgress$ | async" class="count" >{{countInProgress$ | async}}</span>
+  </span>
+
+  <div class="upload-box"
+    (mouseup)="preventDefault()"
+    (mousedown)="preventDefault()"
+    (click)="preventDefault()"
+    [ngStyle]="{display: (displayUpload$ | async) ? 'block' : 'none'}"
+  >
+
+    <div class="arrow-top"></div>
+
+    <div *ngIf="(uploadList$ | async).length > (countInProgress$ | async)" class="clear-done">
+        <span class="link" (click)="clearAllDone()">Clear done</span>
+    </div>
+
+    <div class="items-container">
+      <div class="loading-item" [ngClass]="{'done' : (item.progress | async) >= 1, 'failed': (item.status | async) == 4}" *ngFor="let item of uploadList$ | async; let i = index">
+        <div class="foreground" [ngStyle]="{'width' : (item.progress | async) * 100 + '%'}"></div>
+        <span class="status">
+          <span class="name">{{item.name}}</span>
+          <span *ngIf="(item.status | async) != 4" class="size">{{item.loaded | async | size}} / {{item.total | size}}</span>
+          <span *ngIf="(item.status | async) != 4" class="percent">{{item.progress | async | progress}}</span>
+
+          <span *ngIf="(item.status | async) == 4" [ngSwitch]="item.failReason" class="error-reason">
+            <span *ngSwitchCase="1">File is too big (max. {{item.additionalInfo | size}})</span>
+            <span *ngSwitchCase="2">Unsupported format (supported: {{item.additionalInfo}})</span>
+          </span>
+
+        </span>
+        <span class="cancel-button mdi"
+              [ngClass]="{
+                'mdi-check-circle-outline' : (item.progress | async) >= 1,
+                'mdi-close-circle' : (item.progress | async) < 1 && (item.status | async) != 4,
+                'mdi-alert' : (item.status | async) == 4
+              }"
+              (click)="cancel(item)"></span>
+      </div>
+    </div>
+
+    <div *ngIf="(uploadList$ | async).length === 0">
+      No uploading files
+      <br>
+      <br>
+      <div class="dragAndDropHelp">
+          Drag & drop files to upload
+      </div>
+    </div>
+
+  </div>
+</div>
